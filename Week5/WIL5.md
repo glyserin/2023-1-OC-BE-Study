@@ -7,6 +7,7 @@
 <br>
 **클래스와 객체의 관계**  
 클래스 : 객체 = 사람 : 찰푸 = 펭귄 : 뽀로로 = 쥐 : 미키마우스
+<br>
 
 ## 객체 지향의 4대 특성
 
@@ -16,6 +17,7 @@
 상속(~~Inheritance~~) : 재사용  
 추상화(Abstraction) : 모델링! 구체적인 것을 분해해서 관심 영역, Application Boudary에 있는 특성만 가지고 재조합하는 것.  
 다형성(Polymorphism) : 사용 편의
+<br>
 
 ## 추상화와 T 메모리
 
@@ -26,19 +28,20 @@
 Mouse mickey = new Mouse();
 ```
 
-: 참조변수 mickey에 Mouse 객체의 주소(포인터) 할당
+: 참조변수 mickey에 Mouse 객체의 주소(포인터) 할당  
 <br>
-클래스 멤버와 객체 멤버를 구분하는 키워드 : **static**
+클래스 멤버와 객체 멤버를 구분하는 키워드 : **static**  
 <br>
 객체의 속성 중 모든 객체에서 같은 값인 속성에 대해 메모리 할당을 한 번만 하는 법 : **static**  
 → 그럼 클래스 멤버 속성이 되고, heap이 아닌 static 영역에 할당됨  
-ClassName.countOfTail 과 같이 클래스명.속성명 으로도 접근 가능
+ClassName.countOfTail 과 같이 클래스명.속성명 으로도 접근 가능  
 <br>
-💡 main() 메서드는 항상 static이 붙음 → 클래스 멤버 메서드니까
+💡 main() 메서드는 항상 static이 붙음 → 클래스 멤버 메서드니까  
 <br>
 상속의 is a 관계?  
 → is a 대신에 is a kind of 로 생각하자!  
 → 하위클래스 is a kind of 상위클래스
+<br>
 
 ## 오버라이딩 vs 오버로딩
 
@@ -56,6 +59,7 @@ Animal pingu = new Penguin();
 ```
 
 처럼 pingu는 Animal 인스턴스를 가리키지만, Penguin에서 재정의한 메소드가 호출된다.
+<br>
 
 ## call by value 와 call by reference
 
