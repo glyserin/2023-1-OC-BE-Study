@@ -53,9 +53,9 @@ car.setTire(tire);  // 운전자가 자동차에 타이어를 장착
 Car 클래스에 tire라는 속성을 만들고, 설정자 메서드를 만드는 코드
 
 ```java
-**import org.springframework.beans.factory.annotation.Autowired;**
+import org.springframework.beans.factory.annotation.Autowired;
 
-**@Autowired**  // 스프링 설정파일을 보고 자동으로 속성의 Setter 역할을 해주겠다는 의미
+@Autowired  // 스프링 설정파일을 보고 자동으로 속성의 Setter 역할을 해주겠다는 의미
 Tire tire;
 ```
 
@@ -67,35 +67,36 @@ xml파일 (추가된 코드)
 ```java
 <xml version="1.O" encoding= "UTF-8"?>
 <beans xmlns="http:/www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" **xmlns:context="http://www.springframework.org/schema/context"**
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"  // 이거
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		**http://www.springframework.org/schema/context http://www.springframework.org/schema/
-context/spring-context-3.1.xsd">**
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/
+context/spring-context-3.1.xsd">  // 이거
 
-	**<context:annotation-config />**
+	<context:annotation-config />  // 이거
 
 	<bean id="tire" class="expert004.KoreaTire"></bean>
 	<bean id="americaTire" class="expert004.AmericaTire"></bean>
 
-	**<bean id="car" class="expert004.car"></bean>**
+	<bean id="car" class="expert004.car"></bean>  // 이거
 </beans>
 ```
 
-xml파일에서 우클릭 > Open With > Spring Config Editor > 하단 Namespaces > Context 체크 → 위 두줄 자동 삽입!
-<img src="/image/1.png",width="200px">
+xml파일에서 우클릭 > Open With > Spring Config Editor > 하단 Namespaces > Context 체크 → 위 두줄 자동 삽입!  
+![1](./image/1.png)
+
 <br>
 🧐 AmericaTire로 변경하려면 어디를 고쳐야 할까?  
 → xml 파일에서 bean의 id만 변경하면 된다
 
 ```java
-<bean **id="tire02"** class="expert004.KoreaTire"></bean>
-<bean **id="tire"** class="expert004.AmericaTire"></bean>
+<bean id="tire02" class="expert004.KoreaTire"></bean>
+<bean id="tire" class="expert004.AmericaTire"></bean>
 ```
 
 <br>
 
 ✏️ `@Autowired`를 통한 속성 매칭 규칙 (feat.인터페이스의 구현)  
-<img src="/image/2.png",width="200px">
+![2](./image/2.png)
 
 <br>
 
@@ -130,7 +131,7 @@ AfterThrowing (메서드에서 예외 발생하면서 종료 후)
 <br>
 
 **AOP 적용 전후 Boy.java 및 관련 코드 비교**  
-<img src="/image/3.png",width="200px">
+![3](./image/3.png)
 
 → `@Aspect` : 이 클래스를 AOP에서 사용하겠다는 의미
 
@@ -152,17 +153,18 @@ pom.xml에 없으면 추가
 <br>
 
 **AOP를 통해 런타임에 로직 주입**  
-<img src="/image/4.png",width="200px">
+![4](./image/4.png)
 <br>
 
 **AOP 전후의 Boy.java, Girl.java 의 변화와 관련 코드**
-<img src="/image/5.png",width="200px">
+![5](./image/5.png)
 <br>
 → 빨간색 : 스프링 AOP가 인터페이스 기반으로 작동하는 요건 충족을 위한것  
 → `<aop:aspectj-autoproxy />` 는 뭔가요  
 스프링 프레임워크에 AOP 프록시를 사용하라고 지시하는 것!  
 프록시를 이용해 호출하면 프록시가 메서드 호출 요청을 진짜 객체에게 전달해줌
-<img src="/image/6.png",width="200px">
+
+![6](./image/6.png)
 
 ✏️ 중간의 `runSomething()` 메서드는 주고받는 내용을 감지하거나 조작할 수 있음  
 <br>
