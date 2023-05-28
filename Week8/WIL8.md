@@ -15,7 +15,7 @@ Car 객체생성자 안에서 new Tire();  // 자동차가 내부적으로 타�
 → Car가 Tire에 의존한다 == 전체가 부분에 의존한다!  
 <br>
 
-**[스프링 없이 의존성 주입하기 1 - 생성자를 통한 의존성 주입]**
+**🌱[스프링 없이 의존성 주입하기 1 - 생성자를 통한 의존성 주입]**
 
 ```java
 Tire tire = new KoreaTire();  // 운전자가 타이어를 생산
@@ -37,7 +37,7 @@ Car car = new Car(tire);  // 운전자가 자동차를 생성하면서 타이어
 → BUT❗️최초로 한번 장착한 이후에 변경이 불가능하다.  
 <br>
 
-**[스프링 없이 의존성 주입하기 2 - 속성을 통한 의존성 주입]**
+**🌱[스프링 없이 의존성 주입하기 2 - 속성을 통한 의존성 주입]**
 
 Getter, Setter를 이용!
 
@@ -49,7 +49,7 @@ car.setTire(tire);  // 운전자가 자동차에 타이어를 장착
 
 <br>
 
-**[스프링을 통한 의존성 주입 - `@Autowired`를 통한 속성 주입]**
+**🌱[스프링을 통한 의존성 주입 - `@Autowired`를 통한 속성 주입]**
 Car 클래스에 tire라는 속성을 만들고, 설정자 메서드를 만드는 코드
 
 ```java
@@ -121,7 +121,7 @@ AOP는 로직(code)의 주입!
 
 <br>
 
-**메서드에서 로직(코드)을 주입할 수 있는 곳:**  
+**[메서드에서 로직(코드)을 주입할 수 있는 곳]**  
 Around (메서드 전 구역)  
 Before (메서드 시작 전)  
 After (메서드 종료 후)  
@@ -168,15 +168,16 @@ pom.xml에 없으면 추가
 
 ✏️ 중간의 `runSomething()` 메서드는 주고받는 내용을 감지하거나 조작할 수 있음  
 <br>
+<br>
 
-**Pointcut - Aspect 적용 위치 지정자**
+**🍕Pointcut - Aspect 적용 위치 지정자**
 
 횡단 관심사를 적용할 타깃 메서드를 선택하는 지시자  
 `@Before("execution(*runsomething())")`에서 `*runsomething()`
 → 이 메서드를 Pointcut이 실행되기 전에 실행하겠다  
 <br>
 
-**JoinPoint - Aspect 적용이 가능한 모든 지점**
+**🍕JoinPoint - Aspect 적용이 가능한 모든 지점**
 
 - Pointcut의 후보가 되는 모든 메서드들
   스프링 프레임워크가 관리하는 Bean의 모든 메서드
@@ -187,18 +188,18 @@ pom.xml에 없으면 추가
 실행 시점에 실제 호출된 메서드, 그걸 소유한 객체, 파라마터 등의 정보 확인 가능  
 <br>
 
-**Advice - Pointcut에 언제, 무엇을 적용할지 정의한 메서드**
+**🍕Advice - Pointcut에 언제, 무엇을 적용할지 정의한 메서드**
 
 MyAspect.java 의 내부..!  
 (지정된 Pointcut이 시작되기 전(@Before)에 before() 메서드를 실행하라)  
 <br>
 
-**Aspect - Advisor의 집합체**
+**🍕Aspect - Advisor의 집합체**
 
 Aspect = Advice들 + Pointcut들  
 <br>
 
-**Advisor - 언제 어디서 무엇을**
+**🍕Advisor - 언제 어디서 무엇을**
 
 Advisor = 한 개의 Advice + 한 개의 Pointcut  
 <br>
