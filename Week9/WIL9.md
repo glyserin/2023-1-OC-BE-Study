@@ -9,9 +9,9 @@ Stream을 효율적으로 사용하기 위해 함수형 프로그래밍의 변�
 
 ## 람다와 스트림
 
-**람다**: 코드 블록 → 메서드의 인자나 반환값으로 사용 가능! 변수처뤔.
+**람다**: 코드 블록 → 메서드의 인자나 반환값으로 사용 가능! 변수처뤔.  
 <br>
-기존 방식, 별도의 클래스와 메서드 생성
+🐭 기존 방식, 별도의 클래스와 메서드 생성
 
 ```java
 public class Example1 {
@@ -32,7 +32,7 @@ class MyTest implements Runnable {
 ```
 
 <br>
-기존 방식, 익명 객체 생성 방식
+🐭 기존 방식, 익명 객체 생성 방식
 
 ```java
 public class Example2 {
@@ -49,7 +49,7 @@ public class Example2 {
 ```
 
 <br>
-새로운 방식, 람다
+🐹 새로운 방식, 람다
 
 ```java
 public class Example3 {
@@ -69,6 +69,7 @@ public class Example3 {
 - `public void run()` 메서드가 `()`로 바뀔 수 있음! Runnable 인터페이스가 가진 추상 메서드가 `run()` 하나이기 때문.
 - `(인자 목록) -> {로직}` 의 구조
 
+<br>
 <br>
 
 **함수형 인터페이스** : 추상 메서드를 하나만 갖는 인터페이스 → 람다식으로 변경 가능!
@@ -216,6 +217,7 @@ public class B013 {
 **메서드 레퍼런스와 람다식 비교**
 ![2](./image/2.png)
 <br>
+<br>
 
 ## Optional
 
@@ -244,7 +246,7 @@ System.out.println(optional.isPresent()); // false
 ```
 
 <br>
-💡 Optional 클래스는 내부에서 static 변수로 EMPTY 객체를 미리 생성해서 가지고 있음.
+💡 Optional 클래스는 내부에서 static 변수로 EMPTY 객체를 미리 생성해서 가지고 있음.  
 <br>
 
 **😺 `Optional.of()` - 값이 절대 null이 아닌 경우**
